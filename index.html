@@ -1,0 +1,1594 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TURKON — Streetwear Drop</title>
+    <meta name="description" content="TURKON — agressiv streetwear brendi. Limited drop: oversize futbolkalar, 100% paxta, 210 g/m². DISCIPLINE va AMIR TIMUR WORLD TOUR dizaynlari.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Шрифты -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-main: #050609;
+            --bg-alt: #111218;
+            --accent-red: #e50914;
+            --accent-red-soft: rgba(229, 9, 20, 0.2);
+            --text-main: #f5f5f5;
+            --text-muted: #a3a3a3;
+            --border-soft: #2b2c33;
+            --card-bg: #0b0d13;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            background: radial-gradient(circle at top, #1a1b23 0%, #050609 55%, #000000 100%);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        img { max-width: 100%; display: block; }
+
+        a { color: inherit; text-decoration: none; }
+
+        h1, h2, h3, h4 {
+            font-family: 'Oswald', system-ui, sans-serif;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            margin-top: 0;
+        }
+
+        .wrapper {
+            max-width: 1160px;
+            margin: 0 auto;
+            padding: 0 16px 64px;
+        }
+
+        /* Двуязычность */
+
+        [data-lang] { display: none; }
+        body.lang-uz [data-lang="uz"] { display: block; }
+        body.lang-ru [data-lang="ru"] { display: block; }
+
+        /* Шапка */
+
+        header {
+            border-bottom: 1px solid var(--border-soft);
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            backdrop-filter: blur(12px);
+            background: linear-gradient(to bottom, rgba(5,6,9,0.95), rgba(5,6,9,0.85));
+        }
+
+        .nav {
+            max-width: 1160px;
+            margin: 0 auto;
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-box img {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .logo-text span:first-child {
+            font-family: 'Oswald', sans-serif;
+            font-size: 20px;
+            letter-spacing: 0.08em;
+        }
+
+        .logo-text span:last-child {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .lang-switch {
+            display: inline-flex;
+            border-radius: 999px;
+            border: 1px solid var(--border-soft);
+            overflow: hidden;
+        }
+
+        .lang-switch button {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 4px 10px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            cursor: pointer;
+        }
+
+        .lang-switch button.active {
+            background: var(--accent-red);
+            color: #fff;
+        }
+
+        .nav-cta { display: none; }
+
+        @media (min-width: 640px) {
+            .nav-cta { display: inline-flex; }
+        }
+
+        /* Кнопки */
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 999px;
+            border: 1px solid transparent;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            cursor: pointer;
+            background: transparent;
+            color: var(--text-main);
+            transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-red), #ff3535);
+            box-shadow: 0 0 20px rgba(229, 9, 20, 0.4);
+        }
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 0 26px rgba(229, 9, 20, 0.6);
+        }
+
+        .btn-outline {
+            border-color: var(--border-soft);
+            background: rgba(15,16,22,0.9);
+        }
+        .btn-outline:hover {
+            border-color: var(--accent-red);
+            box-shadow: 0 0 14px rgba(229, 9, 20, 0.4);
+        }
+
+        /* Hero */
+
+        .hero {
+            padding: 36px 16px 40px;
+            border-bottom: 1px solid var(--border-soft);
+        }
+
+        .hero-inner {
+            max-width: 1160px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+            gap: 28px;
+            align-items: center;
+        }
+
+        @media (max-width: 799px) {
+            .hero-inner { grid-template-columns: 1fr; }
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 4px 9px;
+            border-radius: 999px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border-soft);
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .hero-title {
+            font-size: clamp(28px, 5vw, 40px);
+            margin-bottom: 10px;
+        }
+
+        .hero-title span.highlight { color: var(--accent-red); }
+
+        .hero-subtitle {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 18px;
+        }
+
+        .hero-offer {
+            border-left: 2px solid var(--accent-red);
+            padding-left: 12px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .hero-prices {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            font-size: 13px;
+            margin-bottom: 22px;
+        }
+
+        .hero-prices strong { color: #fff; }
+
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .hero-contact-note {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .hero-contact-note a {
+            color: var(--accent-red);
+            text-decoration: underline;
+            text-decoration-style: dotted;
+        }
+
+        .hero-visual {
+            position: relative;
+            padding: 14px;
+        }
+
+        .hero-visual-inner {
+            border-radius: 18px;
+            padding: 14px;
+            background: radial-gradient(circle at top left, var(--accent-red-soft), #050609 40%);
+            border: 1px solid rgba(255,255,255,0.06);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-visual-inner::before {
+            content: "";
+            position: absolute;
+            inset: -40%;
+            background:
+                radial-gradient(circle at 20% 0%, rgba(229,9,20,0.4) 0, transparent 55%),
+                radial-gradient(circle at 80% 100%, rgba(255,255,255,0.05) 0, transparent 60%);
+            opacity: 0.9;
+            pointer-events: none;
+        }
+
+        .hero-visual-content {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 12px;
+            align-items: center;
+        }
+
+        @media (max-width: 799px) {
+            .hero-visual-content {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+
+        .hero-mockups {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .hero-mockups img {
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(0,0,0,0.5);
+        }
+
+        .hero-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .hero-badge {
+            font-family: 'Oswald', sans-serif;
+            font-size: 24px;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        .hero-drop-count {
+            font-size: 12px;
+            margin-top: 8px;
+            color: var(--text-muted);
+        }
+
+        /* Разделы */
+
+        section {
+            padding: 36px 0 8px;
+            border-bottom: 1px solid var(--border-soft);
+        }
+
+        .section-header { margin-bottom: 18px; }
+
+        .section-kicker {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--accent-red);
+            margin-bottom: 4px;
+        }
+
+        .section-title { font-size: 22px; margin-bottom: 4px; }
+
+        .section-subtitle {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* О бренде */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+            gap: 24px;
+        }
+
+        @media (max-width: 799px) {
+            .about-grid { grid-template-columns: 1fr; }
+        }
+
+        .about-text {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .about-tagline {
+            margin-top: 12px;
+            padding: 10px 12px;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border-soft);
+            font-size: 13px;
+        }
+
+        .about-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 10px;
+            font-size: 13px;
+        }
+
+        .about-list li {
+            padding: 8px 10px;
+            border-radius: 10px;
+            background: rgba(15,16,22,0.9);
+            border: 1px solid var(--border-soft);
+        }
+
+        /* Карточки дизайнов */
+
+        .design-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            gap: 24px;
+        }
+
+        @media (max-width: 979px) {
+            .design-grid { grid-template-columns: 1fr; }
+        }
+
+        .design-card {
+            background: var(--card-bg);
+            border-radius: 18px;
+            border: 1px solid var(--border-soft);
+            padding: 16px;
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+            gap: 16px;
+        }
+
+        @media (max-width: 699px) {
+            .design-card { grid-template-columns: 1fr; }
+        }
+
+        .design-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .design-images img {
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.06);
+            background: #000;
+        }
+
+        .design-body {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .design-title {
+            font-size: 18px;
+            margin-bottom: 6px;
+        }
+
+        .design-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 8px 0 10px;
+        }
+
+        .pill {
+            padding: 3px 8px;
+            border-radius: 999px;
+            border: 1px solid var(--border-soft);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+        }
+
+        .pill-red {
+            border-color: var(--accent-red);
+            color: #fff;
+        }
+
+        .spec-list {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+            display: grid;
+            gap: 4px;
+        }
+
+        .spec-list li::before {
+            content: "•";
+            color: var(--accent-red);
+            margin-right: 5px;
+        }
+
+        .design-price {
+            font-size: 13px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .design-price strong { color: #fff; }
+
+        .design-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        /* Почему TURKON */
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 12px;
+        }
+
+        .benefit-card {
+            padding: 12px;
+            border-radius: 14px;
+            background: rgba(15,16,22,0.95);
+            border: 1px solid var(--border-soft);
+            font-size: 13px;
+        }
+
+        .benefit-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--accent-red);
+            margin-bottom: 4px;
+        }
+
+        /* Цены */
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+            gap: 20px;
+        }
+
+        @media (max-width: 799px) {
+            .pricing-grid { grid-template-columns: 1fr; }
+        }
+
+        .pricing-main {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 14px;
+            border: 1px solid var(--border-soft);
+            font-size: 14px;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px dashed #2b2c33;
+        }
+
+        .price-row:last-child { border-bottom: none; }
+
+        .price-row span:last-child { font-weight: 600; }
+
+        .pricing-note {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 8px;
+        }
+
+        .pricing-side {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .pricing-side strong { color: #fff; }
+
+        /* Размерная сетка */
+
+        .size-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            margin-top: 10px;
+        }
+
+        .size-table th,
+        .size-table td {
+            border: 1px solid var(--border-soft);
+            padding: 6px 8px;
+            text-align: center;
+        }
+
+        .size-table th {
+            background: rgba(255,255,255,0.02);
+            font-weight: 500;
+        }
+
+        .size-note {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 6px;
+        }
+
+        /* Форма заказа */
+
+        .order-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+            gap: 20px;
+        }
+
+        @media (max-width: 799px) {
+            .order-grid { grid-template-columns: 1fr; }
+        }
+
+        form {
+            background: var(--card-bg);
+            border-radius: 16px;
+            border: 1px solid var(--border-soft);
+            padding: 14px;
+            font-size: 13px;
+        }
+
+        .form-row { margin-bottom: 10px; }
+
+        .form-row label {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .form-row input,
+        .form-row select,
+        .form-row textarea {
+            width: 100%;
+            border-radius: 10px;
+            border: 1px solid #2b2c33;
+            background: #050609;
+            color: var(--text-main);
+            padding: 7px 9px;
+            font-size: 13px;
+            font-family: inherit;
+        }
+
+        .form-row textarea {
+            resize: vertical;
+            min-height: 60px;
+        }
+
+        .form-row input:focus,
+        .form-row select:focus,
+        .form-row textarea:focus {
+            outline: none;
+            border-color: var(--accent-red);
+            box-shadow: 0 0 0 1px rgba(229, 9, 20, 0.4);
+        }
+
+        .form-note {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 6px;
+        }
+
+        .order-contacts {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .order-contacts a {
+            color: var(--accent-red);
+            text-decoration: underline;
+            text-decoration-style: dotted;
+        }
+
+        /* FAQ */
+
+        .faq-list {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+            gap: 20px;
+            font-size: 13px;
+        }
+
+        @media (max-width: 799px) {
+            .faq-list { grid-template-columns: 1fr; }
+        }
+
+        .faq-item { margin-bottom: 10px; }
+
+        .faq-q {
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .faq-a { color: var(--text-muted); }
+
+        /* Footer */
+
+        footer {
+            padding: 16px 16px 28px;
+            font-size: 11px;
+            color: var(--text-muted);
+            background: #050609;
+        }
+
+        .footer-inner {
+            max-width: 1160px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .footer-links a {
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-red);
+        }
+    </style>
+</head>
+<body class="lang-uz">
+
+<header>
+    <div class="nav">
+        <div class="logo-box">
+            <img src="img/logo.png" alt="TURKON logo">
+            <div class="logo-text">
+                <span>TURKON</span>
+                <span data-lang="uz">Streetwear brend</span>
+                <span data-lang="ru">Streetwear бренд</span>
+            </div>
+        </div>
+        <div class="nav-actions">
+            <div class="lang-switch">
+                <button class="lang-btn active" data-set-lang="uz">UZ</button>
+                <button class="lang-btn" data-set-lang="ru">RU</button>
+            </div>
+            <a href="https://t.me/turkon_uz" target="_blank" class="btn btn-outline nav-cta">
+                <span data-lang="uz">Telegram</span>
+                <span data-lang="ru">Telegram</span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div>
+                <div class="hero-tag">
+                    <span data-lang="uz">Limited drop • 100 dona</span>
+                    <span data-lang="ru">Limited drop • 100 штук</span>
+                </div>
+
+                <h1 class="hero-title">
+                    <span data-lang="uz">
+                        Orzuingizdagi <span class="highlight">kiyim</span>.
+                        TURKON birinchi drop.
+                    </span>
+                    <span data-lang="ru">
+                        <span class="highlight">Одежда вашей мечты</span>.
+                        Первый drop TURKON.
+                    </span>
+                </h1>
+
+                <p class="hero-subtitle" data-lang="uz">
+                    Tarix, islom va turkiy xalqlar ruhi + agressiv ko‘cha stili va Y2K estetika.
+                    210 g/m² qalin mato, boxy oversize fit — massmarket emas, real streetwear.
+                </p>
+                <p class="hero-subtitle" data-lang="ru">
+                    История, ислам и дух тюркских народов + агрессивный стрит и Y2K.
+                    Плотный 210 г/м² хлопок, boxy oversize — не массмаркет, а честный streetwear.
+                </p>
+
+                <div class="hero-offer" data-lang="uz">
+                    Intizom, jangchi ruhi va Amir Temur merosini zamonaviy streetwear formatida his qilishni xohlaysizmi?
+                    Unda bu drop siz uchun.
+                </div>
+                <div class="hero-offer" data-lang="ru">
+                    Хочешь чувствовать дисциплину, дух воина и наследие Амир Тимура
+                    в формате современного стритвира? Этот дроп — для тебя.
+                </div>
+
+                <div class="hero-prices">
+                    <div data-lang="uz">
+                        <strong>Pre-order:</strong> 1 dona — 199 000 so‘m  
+                        <span style="color:#888;">(oddiy narx: 249 000 so‘m)</span>
+                    </div>
+                    <div data-lang="ru">
+                        <strong>Pre-order:</strong> 1 шт — 199 000 сум  
+                        <span style="color:#888;">(обычная цена: 249 000 сум)</span>
+                    </div>
+                    <div data-lang="uz">
+                        <strong>2 dizayn komplekt (Discipline + Amir Timur):</strong> 369 000 so‘m  
+                        — va <strong>BTS yetkazib berish bizdan, bepul</strong>.
+                    </div>
+                    <div data-lang="ru">
+                        <strong>Комплект из 2 дизайнов (Discipline + Amir Timur):</strong> 369 000 сум  
+                        — и <strong>доставка BTS за наш счёт</strong>.
+                    </div>
+                </div>
+
+                <div class="hero-cta">
+                    <a href="#order" class="btn btn-primary">
+                        <span data-lang="uz">Pre-order qilish</span>
+                        <span data-lang="ru">Сделать pre-order</span>
+                    </a>
+                    <a href="https://t.me/turkon_uz" target="_blank" class="btn btn-outline">
+                        <span data-lang="uz">Telegram orqali yozish</span>
+                        <span data-lang="ru">Написать в Telegram</span>
+                    </a>
+                </div>
+
+                <p class="hero-contact-note" data-lang="uz">
+                    Savollar bo‘lsa, bemalol yozing:
+                    <a href="https://instagram.com/turkon.uzb" target="_blank">Instagram @turkon.uzb</a> yoki
+                    <a href="https://t.me/turkon_uz" target="_blank">Telegram @turkon_uz</a>.
+                </p>
+                <p class="hero-contact-note" data-lang="ru">
+                    Остались вопросы? Пиши:
+                    <a href="https://instagram.com/turkon.uzb" target="_blank">Instagram @turkon.uzb</a> или
+                    <a href="https://t.me/turkon_uz" target="_blank">Telegram @turkon_uz</a>.
+                </p>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-visual-inner">
+                    <div class="hero-visual-content">
+                        <div class="hero-mockups">
+                            <img src="img/discipline-front.jpg" alt="TURKON Discipline front">
+                            <img src="img/timur-back.jpg" alt="TURKON Amir Timur back">
+                            <img src="img/discipline-back.jpg" alt="TURKON Discipline back">
+                            <img src="img/timur-front.jpg" alt="TURKON Amir Timur front">
+                        </div>
+                        <div>
+                            <div class="hero-label" data-lang="uz">Birinchi drop</div>
+                            <div class="hero-label" data-lang="ru">Первый drop</div>
+                            <div class="hero-badge">
+                                <span data-lang="uz">210 g/m²<br>boxy oversize</span>
+                                <span data-lang="ru">210 г/м²<br>boxy oversize</span>
+                            </div>
+                            <div class="hero-drop-count" data-lang="uz">
+                                Atigi 100 ta futbolka. Partiya tugasa, bu hikoya yopiladi.
+                            </div>
+                            <div class="hero-drop-count" data-lang="ru">
+                                Всего 100 футболок. Когда партия уйдёт, эта глава закроется.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- О бренде -->
+    <section id="about">
+        <div class="wrapper">
+            <div class="section-header">
+                <div class="section-kicker" data-lang="uz">Brend haqida</div>
+                <div class="section-kicker" data-lang="ru">О бренде</div>
+                <h2 class="section-title" data-lang="uz">TURKON — tarix bilan nafas oladigan streetwear</h2>
+                <h2 class="section-title" data-lang="ru">TURKON — стритвир, который дышит историей</h2>
+                <p class="section-subtitle" data-lang="uz">
+                    Bu odatiy printing emas. Har bir print orqasida turkiy xalqlar, islom va kuchli xarakter haqidagi hikoya turadi.
+                </p>
+                <p class="section-subtitle" data-lang="ru">
+                    Это не просто принты. За каждым дизайном — история тюркских народов, ислама и сильного характера.
+                </p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-text">
+                    <p data-lang="uz">
+                        TURKON — lokal streetwear brend bo‘lib, turkiy xalqlar va musulmon dunyosi tarixidan ilhom olib,
+                        ularni zamonaviy ko‘cha estetikasiga aylantiradi. Anime, Y2K, rep, dark vibe — hammasi bitta drop ichida.
+                    </p>
+                    <p data-lang="ru">
+                        TURKON — локальный streetwear‑бренд, который берет вдохновение в истории тюркских народов и
+                        мусульманского мира и переводит всё это на язык современной уличной культуры. Аниме, Y2K, рэп и дарк‑эстетика — в одном дропе.
+                    </p>
+                    <p data-lang="uz">
+                        Futbolkalar erkaklar uchun tikilgan, lekin boxy oversize fit tufayli girls’lar ham ko‘chaviy look uchun bemalol kiyishi mumkin.
+                    </p>
+                    <p data-lang="ru">
+                        Футболки позиционируются как мужские, но за счёт boxy oversize кроя их спокойно могут носить и девушки в уличных образах.
+                    </p>
+
+                    <div class="about-tagline">
+                        <strong data-lang="uz">“Orzuingizdagi kiyim”</strong>
+                        <strong data-lang="ru">«Одежда вашей мечты»</strong>
+                        <span data-lang="uz">
+                            — bu har kuni kiyishdan zavq olish, o‘zingizni jangchi kabi tutish
+                            va ko‘chaga chiqqanda boshqalardan ajralib turish demak.
+                        </span>
+                        <span data-lang="ru">
+                            — это кайф от того, что каждый день надеваешь не «просто футболку»,
+                            а свой характер и свою историю.
+                        </span>
+                    </div>
+                </div>
+
+                <div>
+                    <ul class="about-list" data-lang="uz">
+                        <li><strong>210 g/m² zich paxta.</strong> Qalin, tanadan ko‘rinmaydi, shapka qilmaydi.</li>
+                        <li><strong>Boxy oversize fit.</strong> Keng, lekin uzunlik bo‘yicha biroz qisqaroq — zamonaviy streetwear silueti.</li>
+                        <li><strong>Limited 100 dona.</strong> Har bir futbolka — drop tarixining bo‘lagi.</li>
+                        <li><strong>Tarix + ko‘cha.</strong> Arab yozuvi, Amir Temur, jangchi obrazi — lekin 2024 yil ruhida.</li>
+                    </ul>
+                    <ul class="about-list" data-lang="ru">
+                        <li><strong>210 г/м² плотный хлопок.</strong> Не просвечивает, не выглядит «дешёво», держит форму.</li>
+                        <li><strong>Boxy oversize fit.</strong> Шире по груди и плечам, чуть короче по длине — как в актуальном стритвире.</li>
+                        <li><strong>Лимит 100 штук.</strong> Каждая футболка — часть истории дропа.</li>
+                        <li><strong>История + улица.</strong> Арабская вязь, Амир Тимур и воин — через призму 2024 года.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Дизайны -->
+    <section id="designs">
+        <div class="wrapper">
+            <div class="section-header">
+                <div class="section-kicker" data-lang="uz">Dizaynlar</div>
+                <div class="section-kicker" data-lang="ru">Дизайны</div>
+                <h2 class="section-title" data-lang="uz">Ikki kuchli print — bitta drop</h2>
+                <h2 class="section-title" data-lang="ru">Два сильных принта — один drop</h2>
+            </div>
+
+            <div class="design-grid">
+                <!-- DISCIPLINE -->
+                <article class="design-card">
+                    <div class="design-images">
+                        <img src="img/discipline-front.jpg" alt="TURKON Discipline front">
+                        <img src="img/discipline-back.jpg" alt="TURKON Discipline back">
+                    </div>
+                    <div class="design-body">
+                        <h3 class="design-title" data-lang="uz">DISCIPLINE — jangchi yo‘li</h3>
+                        <h3 class="design-title" data-lang="ru">DISCIPLINE — путь воина</h3>
+
+                        <div class="design-meta">
+                            <div class="pill pill-red">boxy oversize</div>
+                            <div class="pill">210 g/m²</div>
+                            <div class="pill">limited 50</div>
+                        </div>
+
+                        <p data-lang="uz">
+                            Old tomonda arab yozuvi va “discipline” so‘zi —
+                            bu ichki intizom, sabr va o‘zini nazorat qilish ramzi.
+                            Orqa tomondagi jangchi esa qurbonlikka tayyor, yo‘lidan qaytmaydigan xarakterni ifodalaydi.
+                        </p>
+                        <p data-lang="ru">
+                            На груди — арабская вязь и слово “discipline” —
+                            символ внутренней дисциплины и самоконтроля.
+                            Воин на спине с мечом и qizil aura за головой — образ того, кто готов жертвовать и не отступать.
+                        </p>
+
+                        <ul class="spec-list" data-lang="uz">
+                            <li>100% paxta, pene, 210 g/m² — qalin va sifatli mato.</li>
+                            <li>Boxy oversize fason — keng yelka, keng ko‘krak, ko‘cha silhouette.</li>
+                            <li>Dark / anime / warrior vibe — agressiv, kuchli energy.</li>
+                            <li>Limited: 50 dona — bu print qayta tikilmaydi.</li>
+                        </ul>
+                        <ul class="spec-list" data-lang="ru">
+                            <li>100% хлопок, пенье, 210 г/м² — плотный, «тяжёлый» материал.</li>
+                            <li>Boxy oversize — широкий плечевой шов и свободная посадка по груди.</li>
+                            <li>Dark / anime / warrior vibe — агрессивная, мощная эстетика.</li>
+                            <li>Лимит: 50 штук — переиздания не будет.</li>
+                        </ul>
+
+                        <div class="design-price" data-lang="uz">
+                            <strong>Pre-order:</strong> 199 000 so‘m  
+                            <span style="color:#888;">(keyin 249 000 so‘m)</span>
+                        </div>
+                        <div class="design-price" data-lang="ru">
+                            <strong>Pre-order:</strong> 199 000 сум  
+                            <span style="color:#888;">(потом 249 000 сум)</span>
+                        </div>
+
+                        <div class="design-actions">
+                            <a href="#order" class="btn btn-primary">
+                                <span data-lang="uz">DISCIPLINE ga buyurtma</span>
+                                <span data-lang="ru">Заказать DISCIPLINE</span>
+                            </a>
+                            <a href="https://t.me/turkon_uz" target="_blank" class="btn btn-outline">
+                                <span data-lang="uz">Telegram orqali yozish</span>
+                                <span data-lang="ru">Написать в Telegram</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- AMIR TIMUR WORLD TOUR -->
+                <article class="design-card">
+                    <div class="design-images">
+                        <img src="img/timur-front.jpg" alt="TURKON Amir Timur front">
+                        <img src="img/timur-back.jpg" alt="TURKON Amir Timur back">
+                    </div>
+                    <div class="design-body">
+                        <h3 class="design-title" data-lang="uz">AMIR TIMUR WORLD TOUR — tarix sahnasida</h3>
+                        <h3 class="design-title" data-lang="ru">AMIR TIMUR WORLD TOUR — на мировой сцене</h3>
+
+                        <div class="design-meta">
+                            <div class="pill pill-red">street merch</div>
+                            <div class="pill">world tour</div>
+                            <div class="pill">limited 50</div>
+                        </div>
+
+                        <p data-lang="uz">
+                            Old tomonda — tojdagi Amir Temur portreti, zamonaviy street stilida qayta talqin qilingan.
+                            Orqa tomonda esa “Amir Timur World Tour” va shaharlari —
+                            Samarkand, Balkh, Moscow, Delhi, Baghdad, Ankara — go‘yoki u bugun rep tour qilayotgandek.
+                        </p>
+                        <p data-lang="ru">
+                            Спереди — портрет Амир Темура в короне, переосмысленный в уличном стиле.
+                            На спине — “Amir Timur World Tour” и список городов:
+                            Samarkand, Balkh, Moscow, Delhi, Baghdad, Ankara — как будто это его мировой тур.
+                        </p>
+
+                        <ul class="spec-list" data-lang="uz">
+                            <li>Tarixiy shaxs + world tour merchi estetikasining miksi.</li>
+                            <li>Qora-oq print, minimalistik, lekin juda xarizmatik.</li>
+                            <li>100% paxta, 210 g/m², boxy oversize fit — sifatli streetwear.</li>
+                            <li>Limited: 50 dona — archeviy drop bo‘lib qoladi.</li>
+                        </ul>
+                        <ul class="spec-list" data-lang="ru">
+                            <li>Микс исторического образа и мерча мирового тура артиста.</li>
+                            <li>Чёрно‑белый принт, который заходит и под стрит, и под casual.</li>
+                            <li>100% хлопок, 210 г/м², boxy oversize — качественный крой и материал.</li>
+                            <li>Лимит: 50 штук — вещь «из архива», а не из массмаркета.</li>
+                        </ul>
+
+                        <div class="design-price" data-lang="uz">
+                            <strong>Pre-order:</strong> 199 000 so‘m  
+                            <span style="color:#888;">(keyin 249 000 so‘m)</span>
+                        </div>
+                        <div class="design-price" data-lang="ru">
+                            <strong>Pre-order:</strong> 199 000 сум  
+                            <span style="color:#888;">(потом 249 000 сум)</span>
+                        </div>
+
+                        <div class="design-actions">
+                            <a href="#order" class="btn btn-primary">
+                                <span data-lang="uz">AMIR TIMUR ga buyurtma</span>
+                                <span data-lang="ru">Заказать AMIR TIMUR</span>
+                            </a>
+                            <a href="https://t.me/turkon_uz" target="_blank" class="btn btn-outline">
+                                <span data-lang="uz">Telegram orqali yozish</span>
+                                <span data-lang="ru">Написать в Telegram</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Почему TURKON -->
+    <section id="why">
+        <div class="wrapper">
+            <div class="section-header">
+                <div class="section-kicker" data-lang="uz">Nega aynan biz?</div>
+                <div class="section-kicker" data-lang="ru">Почему именно мы?</div>
+                <h2 class="section-title" data-lang="uz">Nega aynan TURKON droppini olishingiz kerak?</h2>
+                <h2 class="section-title" data-lang="ru">Почему стоит взять именно drop TURKON?</h2>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-label" data-lang="uz">Sifatli oversize</div>
+                    <div class="benefit-label" data-lang="ru">Честный oversize</div>
+                    <p data-lang="uz">
+                        210 g/m², 100% paxta. Qalin, og‘ir, shaklini yo‘qotmaydi — haqiqiy streetwear uchun yaratilgan.
+                    </p>
+                    <p data-lang="ru">
+                        210 г/м², 100% хлопок. Тяжёлый, плотный, не теряет форму — то, чего ждёшь от настоящего стритвира.
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-label" data-lang="uz">Tarix + ko‘cha</div>
+                    <div class="benefit-label" data-lang="ru">История + улица</div>
+                    <p data-lang="uz">
+                        Turkiy va islom tarixidan ilhom, ammo dizaynlar bugungi ko‘cha madaniyatiga moslashtirilган.
+                    </p>
+                    <p data-lang="ru">
+                        Вдохновение — тюркская и исламская история, но подано в формате современной уличной культуры.
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-label" data-lang="uz">Limited drop</div>
+                    <div class="benefit-label" data-lang="ru">Лимитированный drop</div>
+                    <p data-lang="uz">
+                        Atigi 100 ta futbolka (har dizayndan 50 dona). Bu massmarket emas — bu drop, keyin uni qayta topmaysiz.
+                    </p>
+                    <p data-lang="ru">
+                        Всего 100 футболок (по 50 каждого дизайна). Это не массмаркет — это drop, который не повторится.
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-label" data-lang="uz">Lokal brendni qo‘llab-quvvatlash</div>
+                    <div class="benefit-label" data-lang="ru">Поддержка локального бренда</div>
+                    <p data-lang="uz">
+                        TURKON — bu Xorazmda yaratilgan, o‘z ildizlarini hurmat qiladigan streetwear.
+                    </p>
+                    <p data-lang="ru">
+                        TURKON — бренд из Хорезма, который уважает свои корни и поднимает локальную сцену.
+                    </p>
+                </div>
+            </div>
+
+            <p class="section-subtitle" style="margin-top:18px;" data-lang="uz">
+                Har bir TURKON drop — bu alohida bob. Bu drop intizom va Amir Temur ruhi haqida.
+                Agar shu bobni o‘tkazib yuborsangiz, keyingi drop allaqachon boshqa afsona haqida bo‘ladi.
+            </p>
+            <p class="section-subtitle" style="margin-top:18px;" data-lang="ru">
+                Каждый drop TURKON — отдельная глава. Этот — про дисциплину и дух Амир Темура.
+                Пропустишь эту главу — следующая уже будет о другой легенде.
+            </p>
+        </div>
+    </section>
+
+    <!-- Цены + размерная сетка -->
+    <section id="pricing">
+        <div class="wrapper">
+            <div class="section-header">
+                <div class="section-kicker" data-lang="uz">Narxlar</div>
+                <div class="section-kicker" data-lang="ru">Цены</div>
+            <h2 class="section-title" data-lang="uz">Pre-order uchun maksimal foydali narxlar</h2>
+            <h2 class="section-title" data-lang="ru">Максимально честные цены на pre-order</h2>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="pricing-main">
+                    <div class="price-row">
+                        <span data-lang="uz">1 dona futbolka (istalgan dizayn)</span>
+                        <span data-lang="ru">1 футболка (любой дизайн)</span>
+                        <span><strong>199 000 so‘m / сум</strong></span>
+                    </div>
+                    <div class="price-row">
+                        <span data-lang="uz">Oddiy narx (drop chiqqandan keyin)</span>
+                        <span data-lang="ru">Обычная цена после drop’а</span>
+                        <span><strong>249 000 so‘m / сум</strong></span>
+                    </div>
+                    <div class="price-row">
+                        <span data-lang="uz">2 dizayn komplekt (Discipline + Amir Timur)</span>
+                        <span data-lang="ru">Комплект 2 дизайна (Discipline + Amir Timur)</span>
+                        <span><strong>369 000 so‘m / сум</strong></span>
+                    </div>
+                    <div class="price-row">
+                        <span data-lang="uz">2 dona uchun yetkazib berish</span>
+                        <span data-lang="ru">Доставка при заказе 2 футболок</span>
+                        <span><strong>0 so‘m / сум — BTS bizdan</strong></span>
+                    </div>
+
+                    <p class="pricing-note" data-lang="uz">
+                        Pre-order narxi partiya Xorazmga kelguncha amal qiladi (fevral oxiri).
+                        Narxni ushlab qolish uchun kamida <strong>50 000 so‘m</strong> oldindan to‘lov qilasiz —
+                        shunda chegirma butun buyurtmaga ishlaydi.
+                    </p>
+                    <p class="pricing-note" data-lang="ru">
+                        Цена pre-order действует до прихода партии в Хорезм (конец февраля).
+                        Чтобы зафиксировать цену, вносишь минимум <strong>50 000 сум</strong> предоплаты —
+                        и скидка распространяется на всю сумму заказа.
+                    </p>
+                </div>
+
+                <div class="pricing-side">
+                    <p data-lang="uz">
+                        <strong>To‘lov:</strong> Click orqali Uzcard/Humo kartaga o‘tkazma.  
+                        Qolgan summani esa drop Xorazmga kelib, jo‘natishdan oldin to‘laysiz.
+                    </p>
+                    <p data-lang="ru">
+                        <strong>Оплата:</strong> через Click переводом на Uzcard/Humo.  
+                        Остаток суммы оплачиваешь, когда партия уже у нас и мы готовы отправлять.
+                    </p>
+                    <p data-lang="uz">
+                        <strong>Yetkazib berish:</strong> Xorazmdan butun O‘zbekiston bo‘ylab
+                        faqat <strong>BTS pochta</strong> orqali jo‘natamiz.
+                        Narx — tanlagan BTS bo‘limingizga qarab individual (odatda 20–30 ming so‘m).
+                    </p>
+                    <p data-lang="ru">
+                        <strong>Доставка:</strong> отправляем из Хорезма по всему Узбекистану
+                        только через <strong>BTS почту</strong>, на указанное вами отделение.
+                        Стоимость считается индивидуально (обычно 20–30 тыс сум).
+                    </p>
+                    <p data-lang="uz">
+                        <strong>2 ta futbolka olsangiz — BTS yetkazib berish bizdan, bepul.</strong>
+                    </p>
+                    <p data-lang="ru">
+                        <strong>Если берёшь 2 футболки — доставка BTS за нас, бесплатно.</strong>
+                    </p>
+                </div>
+            </div>
+
+            <div style="margin-top:24px;">
+                <h3 data-lang="uz">Razmer jadvali</h3>
+                <h3 data-lang="ru">Размерная сетка</h3>
+
+                <!-- Таблица UZ -->
+                <table class="size-table" data-lang="uz">
+                    <thead>
+                    <tr>
+                        <th>Razmer</th>
+                        <th>Bo‘y (sm)</th>
+                        <th>Ko‘krak kengligi (sm)</th>
+                        <th>Orqa uzunligi (sm)</th>
+                        <th>Yelka kengligi (sm)</th>
+                        <th>Fit tavsiyasi</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>M</td>
+                        <td>170–176</td>
+                        <td>60</td>
+                        <td>70</td>
+                        <td>58</td>
+                        <td>Balansli boxy oversize, o‘rtacha gavda uchun</td>
+                    </tr>
+                    <tr>
+                        <td>L</td>
+                        <td>178–184</td>
+                        <td>62</td>
+                        <td>72</td>
+                        <td>60</td>
+                        <td>Bo‘yi balandlar va kengroq fit yoqtiradiganlar uchun</td>
+                    </tr>
+                    <tr>
+                        <td>XL</td>
+                        <td>185+ (yoki 176+ maksimal oversize uchun)</td>
+                        <td>64</td>
+                        <td>74</td>
+                        <td>62</td>
+                        <td>Juda keng, to‘liq oversize / boxy fit</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <!-- Таблица RU -->
+                <table class="size-table" data-lang="ru">
+                    <thead>
+                    <tr>
+                        <th>Размер</th>
+                        <th>Рост (см)</th>
+                        <th>Ширина груди (см)</th>
+                        <th>Длина по спине (см)</th>
+                        <th>Ширина по плечам (см)</th>
+                        <th>Рекомендация по посадке</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>M</td>
+                        <td>170–176</td>
+                        <td>60</td>
+                        <td>70</td>
+                        <td>58</td>
+                        <td>Аккуратный boxy oversize для среднего телосложения</td>
+                    </tr>
+                    <tr>
+                        <td>L</td>
+                        <td>178–184</td>
+                        <td>62</td>
+                        <td>72</td>
+                        <td>60</td>
+                        <td>Для более высокого роста или любителей шире</td>
+                    </tr>
+                    <tr>
+                        <td>XL</td>
+                        <td>185+ (или 176+ для максимально широкого oversize)</td>
+                        <td>64</td>
+                        <td>74</td>
+                        <td>62</td>
+                        <td>Очень широкий oversize / boxy fit</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <p class="size-note" data-lang="uz">
+                    Masalan, 176 sm bo‘yingiz va ~73 kg bo‘lsangiz, XL toza boxy oversize bo‘lib tushadi.
+                    Agar kamroq bo‘sh fit xohlasangiz — M yoki L ni tanlashingiz mumkin.
+                </p>
+                <p class="size-note" data-lang="ru">
+                    Например, при росте 176 см и весе ~73 кг размер XL садится как чистый boxy oversize.
+                    Если хочешь чуть поспокойнее — бери M или L.
+                </p>
+                <p class="size-note" data-lang="uz">
+                    Bizning futbolkalar boxy fit — keng, lekin uzunlik bo‘yicha biroz qisqaroq. Zamonaviy streetwear vibe uchun ideal.
+                </p>
+                <p class="size-note" data-lang="ru">
+                    Крой boxy fit: шире по груди и плечам, немного короче по длине — идеально под современный streetwear.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Форма заказа -->
+    <section id="order">
+        <div class="wrapper">
+            <div class="section-header">
+                <div class="section-kicker" data-lang="uz">Pre-order</div>
+                <div class="section-kicker" data-lang="ru">Pre-order</div>
+                <h2 class="section-title" data-lang="uz">Buyurtmani hozir band qilib qo‘ying</h2>
+                <h2 class="section-title" data-lang="ru">Забронируй свой размер сейчас</h2>
+                <p class="section-subtitle" data-lang="uz">
+                    Forma orqali ma’lumotlaringizni yuboring — Telegram ochiladi va faqat “yuborish” tugmasini bosasiz.
+                </p>
+                <p class="section-subtitle" data-lang="ru">
+                    Заполни форму — откроется Telegram с готовым сообщением. Останется только нажать «отправить».
+                </p>
+            </div>
+
+            <div class="order-grid">
+                <form id="order-form">
+                    <div class="form-row">
+                        <label for="name" data-lang="uz">Ismingiz</label>
+                        <label for="name" data-lang="ru">Ваше имя</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="contact" data-lang="uz">Telegram yoki telefon raqamingiz</label>
+                        <label for="contact" data-lang="ru">Ваш Telegram или номер телефона</label>
+                        <input type="text" id="contact" name="contact" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="design" data-lang="uz">Qaysi dizayn kerak?</label>
+                        <label for="design" data-lang="ru">Какой дизайн хотите?</label>
+                        <select id="design" name="design" required>
+                            <option value="Discipline">Discipline</option>
+                            <option value="Amir Timur World Tour">Amir Timur World Tour</option>
+                            <option value="Both">Ikkalasi ham / Оба дизайна</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="size" data-lang="uz">Razmer</label>
+                        <label for="size" data-lang="ru">Размер</label>
+                        <select id="size" name="size" required>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="city" data-lang="uz">Shahar</label>
+                        <label for="city" data-lang="ru">Город</label>
+                        <input type="text" id="city" name="city" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="comment" data-lang="uz">Izoh (ixtiyoriy)</label>
+                        <label for="comment" data-lang="ru">Комментарий (необязательно)</label>
+                        <textarea id="comment" name="comment"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+                        <span data-lang="uz">Telegram orqali buyurtma yaratish</span>
+                        <span data-lang="ru">Создать заявку в Telegram</span>
+                    </button>
+
+                    <p class="form-note" data-lang="uz">
+                        Tugmani bossangiz, Telegram ochiladi va buyurtma matni avtomatik to‘ldiriladi. Siz faqat uni yuborasiz.
+                    </p>
+                    <p class="form-note" data-lang="ru">
+                        После нажатия откроется Telegram с готовым текстом заявки. Тебе останется только отправить сообщение.
+                    </p>
+                </form>
+
+                <div class="order-contacts">
+                    <p data-lang="uz">
+                        To‘g‘ridan-to‘g‘ri yozishni xohlaysizmi?  
+                        <br>Telegram: <a href="https://t.me/turkon_uz" target="_blank">@turkon_uz</a>
+                        <br>Instagram: <a href="https://instagram.com/turkon.uzb" target="_blank">@turkon.uzb</a>
+                        <br>Telefon: <a href="tel:+998702280850">+998 70 228 08 50</a>
+                    </p>
+                    <p data-lang="ru">
+                        Хочешь сразу написать вручную?  
+                        <br>Telegram: <a href="https://t.me/turkon_uz" target="_blank">@turkon_uz</a>
+                        <br>Instagram: <a href="https://instagram.com/turkon.uzb" target="_blank">@turkon.uzb</a>
+                        <br>Телефон: <a href="tel:+998702280850">+998 70 228 08 50</a>
+                    </p>
+                    <p data-lang="uz">
+                        Pre-order narxini olish uchun kamida <strong>50 000 so‘m</strong> oldindan Click orqali to‘lov qilasiz.
+                        Qolganini esa partiya Xorazmga kelganda va jo‘natishdan oldin to‘laysiz.
+                    </p>
+                    <p data-lang="ru">
+                        Чтобы получить цену pre-order, вносишь минимум <strong>50 000 сум</strong> предоплаты через Click.
+                        Остальное оплачиваешь, когда партия уже в Хорезме и мы готовы отправлять.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+        <div class="wrapper">
+            <div class="section-header">
+                <div class="section-kicker" data-lang="uz">Savol-javob</div>
+                <div class="section-kicker" data-lang="ru">FAQ</div>
+                <h2 class="section-title" data-lang="uz">Ko‘p so‘raladigan savollar</h2>
+                <h2 class="section-title" data-lang="ru">Частые вопросы</h2>
+            </div>
+
+            <div class="faq-list">
+                <div>
+                    <div class="faq-item">
+                        <div class="faq-q" data-lang="uz">Qanday to‘lov qilaman?</div>
+                        <div class="faq-q" data-lang="ru">Как оплатить?</div>
+                        <div class="faq-a" data-lang="uz">
+                            Click orqali Uzcard/Humo kartaga o‘tkazma qilasiz.
+                            Pre-order narxini ushlab turish uchun kamida 50 000 so‘m oldindan to‘lov kiritasiz,
+                            qolganini esa jo‘natishdan oldin yopasiz.
+                        </div>
+                        <div class="faq-a" data-lang="ru">
+                            Оплата идёт через Click переводом на Uzcard/Humo.
+                            Чтобы зафиксировать цену pre-order, вносишь минимум 50 000 сум предоплаты,
+                            остальную часть оплачиваешь перед отправкой.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-q" data-lang="uz">Yetkazib berish qancha turadi va qancha kunda keladi?</div>
+                        <div class="faq-q" data-lang="ru">Сколько стоит доставка и сколько идёт?</div>
+                        <div class="faq-a" data-lang="uz">
+                            Biz Xorazmdan butun O‘zbekiston bo‘ylab faqat BTS pochta orqali jo‘natamiz.
+                            Narx tanlagan BTS bo‘limingizga qarab individual hisoblanadi (odatda 20–30 ming so‘m).
+                            Odatda 1–3 ish kuni ichida yetib boradi.
+                        </div>
+                        <div class="faq-a" data-lang="ru">
+                            Мы отправляем из Хорезма по всему Узбекистану только через BTS почту —
+                            на то отделение, которое вы укажете. Стоимость считается индивидуально
+                            (обычно 20–30 тыс сум). В среднем посылка идёт 1–3 дня.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-q" data-lang="uz">2 ta futbolka olsam, yetkazib berish ham bepulmi?</div>
+                        <div class="faq-q" data-lang="ru">Если закажу 2 футболки, доставка точно будет бесплатной?</div>
+                        <div class="faq-a" data-lang="uz">
+                            Ha. 2 ta futbolka (istalgan dizayn kombinatsiyasi) buyurtma qilsangiz,
+                            BTS pochta orqali jo‘natish bizning hisobimizdan bo‘ladi.
+                        </div>
+                        <div class="faq-a" data-lang="ru">
+                            Да. При заказе 2 футболок (любой комбинации дизайнов)
+                            отправка через BTS почту оплачивается нашей стороной.
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="faq-item">
+                        <div class="faq-q" data-lang="uz">Razmer tog‘ri kelmasa, almashtira olamanmi?</div>
+                        <div class="faq-q" data-lang="ru">Если размер не подойдёт, можно обменять?</div>
+                        <div class="faq-a" data-lang="uz">
+                            Ha, agar futbolka kiyilmagan bo‘lsa, birinchi 3 kun ichida razmerni almashtirishga harakat qilamiz.
+                            Bunda jo‘natish va qayta jo‘natish xarajatlari xaridor hisobidan bo‘ladi.
+                        </div>
+                        <div class="faq-a" data-lang="ru">
+                            Да, если футболка не была в носке и сохранила вид «новой»,
+                            в течение 3 дней после получения мы можем помочь с обменом размера.
+                            Доставка туда-обратно при этом оплачивается покупателем.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-q" data-lang="uz">Agar luty bрак bo‘lsa-chi?</div>
+                        <div class="faq-q" data-lang="ru">Что если попадётся жёсткий брак?</div>
+                        <div class="faq-a" data-lang="uz">
+                            Agar haqiqiy, jiddiy bрак bo‘lsa (katta nuqsonlar, yirtilish, noto‘g‘ri print va h.k.),
+                            biz sizga boshqa yangi futbolka jo‘natamiz va barcha yetkazib berish xarajatlarini o‘z zimmamizga olamiz.
+                        </div>
+                        <div class="faq-a" data-lang="ru">
+                            Если попадётся действительно серьёзный брак (сильный дефект ткани, шва или принта),
+                            мы отправим вам другую футболку за свой счёт и закроем все расходы по доставке.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-q" data-lang="uz">Qanday parvarish qilish kerak?</div>
+                        <div class="faq-q" data-lang="ru">Как ухаживать за футболкой?</div>
+                        <div class="faq-a" data-lang="uz">
+                            Print — sifatli shyo‘lkografiya, mato — 210 g/m² pene.
+                            Uzok xizmat qilishi uchun 30° da, ichki tomonga ag‘darib yuvishni tavsiya qilamiz,
+                            oqartirgichsiz, kuchli siqishsiz. Printni to‘g‘ridan-to‘g‘ri dazmollamang,
+                            eng yaxshisi — orqa tomondan yoki past haroratda.
+                        </div>
+                        <div class="faq-a" data-lang="ru">
+                            Принт — шелкография, ткань — хлопок пенье 210 г/м².
+                            Чтобы футболка жила долго, стирай при 30° наизнанку, без отбеливателей и жёсткого отжима.
+                            Не гладь утюгом прямо по принту — лучше с изнанки или через ткань, на низкой температуре.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-links">
+            <strong>TURKON</strong>
+            <span>© 2024</span>
+            <a href="https://instagram.com/turkon.uzb" target="_blank">Instagram @turkon.uzb</a>
+            <a href="https://t.me/turkon_uz" target="_blank">Telegram @turkon_uz</a>
+            <a href="tel:+998702280850">+998 70 228 08 50</a>
+        </div>
+        <div data-lang="uz">
+            Streetwear, tarix va intizomni sevuvchilar uchun yaratilgan limited drop.
+        </div>
+        <div data-lang="ru">
+            Лимитированный drop для тех, кто любит streetwear, историю и дисциплину.
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Переключение языка
+    let currentLang = 'uz';
+    const body = document.body;
+    const langButtons = document.querySelectorAll('.lang-btn');
+
+    function setLang(lang) {
+        currentLang = lang;
+        body.classList.remove('lang-uz', 'lang-ru');
+        body.classList.add('lang-' + lang);
+        langButtons.forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.setLang === lang);
+        });
+    }
+
+    langButtons.forEach(btn => {
+        btn.addEventListener('click', () => setLang(btn.dataset.setLang));
+    });
+
+    setLang('uz');
+
+    // Форма → Telegram
+    const form = document.getElementById('order-form');
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const contact = document.getElementById('contact').value.trim();
+        const design = document.getElementById('design').value;
+        const size = document.getElementById('size').value;
+        const city = document.getElementById('city').value.trim();
+        const comment = document.getElementById('comment').value.trim();
+
+        let messageUz =
+            "TURKON PRE-ORDER\n" +
+            "Ism: " + name + "\n" +
+            "Aloqa (Telegram/tel): " + contact + "\n" +
+            "Dizayn: " + design + "\n" +
+            "Razmer: " + size + "\n" +
+            "Shahar: " + city + "\n";
+
+        let messageRu =
+            "TURKON PRE-ORDER\n" +
+            "Имя: " + name + "\n" +
+            "Контакт (Telegram/тел): " + contact + "\n" +
+            "Дизайн: " + design + "\n" +
+            "Размер: " + size + "\n" +
+            "Город: " + city + "\n";
+
+        if (comment) {
+            messageUz += "Izoh / Комментарий: " + comment + "\n";
+            messageRu += "Комментарий: " + comment + "\n";
+        }
+
+        const finalMessage = currentLang === 'uz' ? messageUz : messageRu;
+        const encoded = encodeURIComponent(finalMessage);
+
+        const tgUrl = "https://t.me/turkon_uz?text=" + encoded;
+        window.open(tgUrl, "_blank");
+
+        alert(currentLang === 'uz'
+            ? "Telegram oynasi ochildi. Iltimos, buyurtmani yuborishni unutmang."
+            : "Открылся Telegram. Пожалуйста, не забудь отправить сообщение.");
+
+        form.reset();
+    });
+</script>
+
+</body>
+</html>
